@@ -16,4 +16,4 @@ jobs:
 
       # Step 2: Build API Gateway Docker image
       - name: Build API Gateway Docker Image
-        run: docker build -t api-gateway ./api-gateway
+        run: docker build -t api-gateway .
