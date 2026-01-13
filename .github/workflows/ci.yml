@@ -1,17 +1,19 @@
-name: Gateway CI
+name: API Gateway CI
 
 on:
   push:
-    paths:
-      - "api-gateway/**"
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Step 2: Build API Gateway Docker image
       - name: Build API Gateway Docker Image
         run: docker build -t api-gateway ./api-gateway
